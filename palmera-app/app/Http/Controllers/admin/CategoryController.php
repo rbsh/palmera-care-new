@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cat = \App\Category::where('menu_levels','0')->with('childs')->paginate(10);
+        $cat = \App\Category::get();
         return view('admin.category.index',compact('cat'));
     }
 
@@ -183,7 +183,7 @@ class CategoryController extends Controller
         $cat->status = $request->status;
 
         $cat->save();
-        return redirect('admin/category');
+        return redirect('la-admin/category');
     }
 
 }

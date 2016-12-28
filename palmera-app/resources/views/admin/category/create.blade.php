@@ -30,6 +30,17 @@
 <h1 class="page-title"> Multi Level Categories
 <small>Insert</small>
 </h1>
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <!-- END PAGE TITLE-->
 <!-- END PAGE HEADER-->
 {{-- <div class="note note-info">

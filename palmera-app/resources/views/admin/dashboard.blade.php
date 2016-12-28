@@ -29,7 +29,7 @@
                                 <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
                                 <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
                                 <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
-                                <form class="sidebar-search  " action="page_general_search_3.html" method="POST">
+                                <form class="sidebar-search" action="page_general_search_3.html" method="POST">
                                     <a href="javascript:;" class="remove">
                                         <i class="icon-close"></i>
                                     </a>
@@ -59,20 +59,6 @@
                                             <span class="selected"></span>
                                         </a>
                                     </li>
-                                    <li class="nav-item start ">
-                                        <a href="dashboard_2.html" class="nav-link ">
-                                            <i class="icon-bulb"></i>
-                                            <span class="title">Dashboard 2</span>
-                                            <span class="badge badge-success">1</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item start ">
-                                        <a href="dashboard_3.html" class="nav-link ">
-                                            <i class="icon-graph"></i>
-                                            <span class="title">Dashboard 3</span>
-                                            <span class="badge badge-danger">5</span>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="heading">
@@ -90,76 +76,91 @@
                                             <span class="title">Color Library</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_metronic_grid.html" class="nav-link ">
                                             <span class="title">Metronic Grid System</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_general.html" class="nav-link ">
                                             <span class="title">General Components</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_buttons.html" class="nav-link ">
                                             <span class="title">Buttons</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_buttons_spinner.html" class="nav-link ">
                                             <span class="title">Spinner Buttons</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_confirmations.html" class="nav-link ">
                                             <span class="title">Popover Confirmations</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_sweetalert.html" class="nav-link ">
                                             <span class="title">Bootstrap Sweet Alerts</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_icons.html" class="nav-link ">
                                             <span class="title">Font Icons</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_socicons.html" class="nav-link ">
                                             <span class="title">Social Icons</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_typography.html" class="nav-link ">
                                             <span class="title">Typography</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_tabs_accordions_navs.html" class="nav-link ">
                                             <span class="title">Tabs, Accordions & Navs</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_timeline.html" class="nav-link ">
                                             <span class="title">Timeline 1</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_timeline_2.html" class="nav-link ">
                                             <span class="title">Timeline 2</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_timeline_horizontal.html" class="nav-link ">
                                             <span class="title">Horizontal Timeline</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_tree.html" class="nav-link ">
                                             <span class="title">Tree View</span>
                                         </a>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="javascript:;" class="nav-link nav-toggle">
                                             <span class="title">Page Progress Bar</span>
@@ -174,11 +175,13 @@
                                             </li>
                                         </ul>
                                     </li>
+
                                     <li class="nav-item  ">
                                         <a href="ui_blockui.html" class="nav-link ">
                                             <span class="title">Block UI</span>
                                         </a>
                                     </li>
+                                    
                                     <li class="nav-item  ">
                                         <a href="ui_bootstrap_growl.html" class="nav-link ">
                                             <span class="title">Bootstrap Growl Notifications</span>

@@ -1,4 +1,4 @@
-
+{{-- 
             <a class="quick-nav-trigger" href="#0">
                 <span aria-hidden="true"></span>
             </a>
@@ -28,4 +28,4 @@
                     </a>
                 </li>
             </ul>
-            <span aria-hidden="true" class="quick-nav-bg"></span>
+            <span aria-hidden="true" class="quick-nav-bg"></span> --}}

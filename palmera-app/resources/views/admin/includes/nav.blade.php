@@ -30,9 +30,24 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item start ">
-                                        <a href="{{url('la-admin/blank')}}" class="nav-link ">
+                                        <a href="{{url('la-admin/item')}}" class="nav-link ">
                                             <i class="icon-bar-chart"></i>
                                             <span class="title">Dashboard</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="icon-home"></i>
+                                    <span class="title">Users</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item start ">
+                                        <a href="{{url('la-admin/user')}}" class="nav-link ">
+                                            <i class="icon-bar-chart"></i>
+                                            <span class="title">List Users</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -57,6 +72,27 @@
                                             <span class="title">View Category</span>
                                         </a>
                                     </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="icon-diamond"></i>
+                                    <span class="title">Item</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item  ">
+                                        <a href="{{ url('la-admin/item/create') }}" class="nav-link ">
+                                            <span class="title">Add Item</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item  ">
+                                        <a href="{{ url('la-admin/item') }}" class="nav-link ">
+                                            <span class="title">View Item</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                         <!-- END SIDEBAR MENU -->

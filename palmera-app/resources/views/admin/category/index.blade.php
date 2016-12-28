@@ -30,7 +30,7 @@
 <div class="portlet box green">
                                     <div class="portlet-title">
                                         <div class="caption">
-                                            <i class="fa fa-cogs"></i>Responsive Flip Scroll Tables </div>
+                                            <i class="fa fa-cogs"></i>List all categories </div>
                                         <div class="tools">
                                             <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                                             <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="portlet-body flip-scroll">
                                         {{-- <table class="table table-bordered table-striped table-condensed flip-content"> --}}
-                                            <table class="table table-hover table-striped">
+                                            <table class="table">
                     <tr>
                       <th width="10">ID</th>
                       <th width="30">Photo</th>
@@ -57,7 +57,7 @@
                     $first = DB::table('categories')->where('menu_levels','0')->get();
                     ?>
                     @foreach($first as $one)
-                    <tr bgcolor="black">
+                    <tr bgcolor="#3599bb">
                       <td>{{$one->id}}</td>
                       <td><img src="{{url($one->photo)}}" height="25"></td>
                       <td>{{$one->name}}</td>
@@ -79,7 +79,7 @@
                       </td>
                       <td><a href="{{url('la-admin/category/'.$one->id)}}" class="btn btn-xs btn-warning">EDIT</a></td>
                       <td><form method="post" action="{{url('la-admin/category/'.$one->id)}}">
-                      <input type="submit" value="DELETE" class="btn btn-xs btn-danger"> 
+                      <button class="btn btn btn-xs btn-danger" data-toggle="confirmation" data-original-title="Are you sure ?" title="">DELETE</button>
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
                       </form></td>
@@ -91,12 +91,12 @@
                                                                ->get();
                               ?>
                               @foreach($second as $two)
-                              <tr bgcolor="red">
+                              <tr>
                                 <td>{{$two->id}}</td>
-                                <td><img src="{{url($one->photo)}}" height="25"></td>
-                                <td>{{$two->name}}</td>
-                                <td>{{$two->row_order}}</td>
-                                <td>
+                                <td bgcolor="#bcbcbc"><img src="{{url($one->photo)}}" height="25"></td>
+                                <td bgcolor="#bcbcbc">{{$two->name}}</td>
+                                <td bgcolor="#bcbcbc">{{$two->row_order}}</td>
+                                <td bgcolor="#bcbcbc">
 
                                 @if($two->status=="0")
                                 <form method="post" action="{{url('la-admin/category/change-status/'.$two->id.'?status='.$two->status)}}">
@@ -111,9 +111,9 @@
                                 </form>
                                 @endif
                                 </td>
-                                <td><a href="{{url('la-admin/category/'.$two->id)}}" class="btn btn-xs btn-warning">EDIT</a></td>
-                                <td><form method="post" action="{{url('la-admin/category/'.$two->id)}}">
-                                <input type="submit" value="DELETE" class="btn btn-xs btn-danger"> 
+                                <td bgcolor="#bcbcbc"><a href="{{url('la-admin/category/'.$two->id)}}" class="btn btn-xs btn-warning">EDIT</a></td>
+                                <td bgcolor="#bcbcbc"><form method="post" action="{{url('la-admin/category/'.$two->id)}}">
+                                <button class="btn btn-xs btn-danger" data-toggle="confirmation" data-original-title="Are you sure ?" title="">DELETE</button>
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 </form></td>
@@ -125,12 +125,12 @@
                                                                          ->get();
                                         ?>
                                         @foreach($three as $third)
-                                        <tr bgcolor="gray">
+                                        <tr>
                                           <td>{{$third->id}}</td>
                                           <td><img src="{{url($third->photo)}}" height="25"></td>
-                                          <td>{{$third->name}}</td>
-                                          <td>{{$third->row_order}}</td>
-                                          <td>
+                                          <td bgcolor="#e9e9e9">{{$third->name}}</td>
+                                          <td bgcolor="#e9e9e9">{{$third->row_order}}</td>
+                                          <td bgcolor="#e9e9e9">
 
                                           @if($third->status=="0")
                                           <form method="post" action="{{url('la-admin/category/change-status/'.$third->id.'?status='.$third->status)}}">
@@ -145,9 +145,9 @@
                                           </form>
                                           @endif
                                           </td>
-                                          <td><a href="{{url('la-admin/category/'.$third->id)}}" class="btn btn-xs btn-warning">EDIT</a></td>
-                                          <td><form method="post" action="{{url('la-admin/category/'.$third->id)}}">
-                                          <input type="submit" value="DELETE" class="btn btn-xs btn-danger"> 
+                                          <td bgcolor="#e9e9e9"><a href="{{url('la-admin/category/'.$third->id)}}" class="btn btn-xs btn-warning">EDIT</a></td>
+                                          <td bgcolor="#e9e9e9"><form method="post" action="{{url('la-admin/category/'.$third->id)}}">
+                                          <button class="btn btn-xs btn-danger" data-toggle="confirmation" data-original-title="Are you sure ?" title="">DELETE</button>
                                           {{ csrf_field() }}
                                           {{ method_field('DELETE') }}
                                           </form></td>
@@ -156,14 +156,7 @@
                               @endforeach          
                       @endforeach
 
-
-
-
-
-
-
-
-                          <tr bgcolor="#f4f4f4">
+                          <tr>
                             <td></td>
                             <td></td>
                             <td></td>

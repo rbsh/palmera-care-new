@@ -1,4 +1,7 @@
 <?php
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
 
 namespace App\Http\Controllers\Auth;
 
@@ -25,15 +28,28 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'la-admin/blank';
+    protected $redirectTo = 'la-admin/item';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
+
+public function authenticate()
+    {
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
+    }
+
+    
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
 }
+
+

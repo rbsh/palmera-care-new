@@ -1,8 +1,8 @@
 <div class="col-md-12">
-  <div class="portlet box green">
+  <div class="portlet box blue">
     <div class="portlet-title">
       <div class="caption">
-      <i class="fa fa-gift"></i>Actions Buttons </div>
+      <i class="fa fa-gift"></i>Add Categories </div>
       <div class="tools">
         <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
         <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
@@ -14,8 +14,10 @@
       <!-- BEGIN FORM-->
       <form action="#">
         <div class="form-actions top">
-          <div class="btn-set pull-left">
-            <button type="submit" class="btn green" value="red">Submit</button>
+          <div class="btn-set pull-right">
+            <button type="submit" name="submit" class="btn btn-primary mt-ladda-btn ladda-button" data-style="expand-right" value="red"><span class="ladda-label">Submit</span>
+                                                    <span class="ladda-spinner"></span></button>
+            <button type="button" class="btn default" value="red">Cancel</button>
           </div>
 {{--           <div class="btn-set pull-right">
             <button type="button" class="btn default">Action 1</button>
@@ -27,36 +29,29 @@
 
         <div class="form-body">
           
-@if(isset($cat->menu_levels)!="")
+          <?php 
+          $catList = DB::table('categories')->get(); 
+          ?>
           <div class="form-group">
             <label for="exampleInputEmail1">Select Categories</label>
             <select class="form-control" name="menu_levels">
-              <?php 
-              $catList = DB::table('categories')->get(); 
-              ?>
-              <option value="0" @if($cat->menu_levels=="0") selected="" @endif>Create First level categories (Level)</option>
-              
-
-              @foreach($catList as $rows)
-                      <option value="{{$rows->id}}" @if($cat->menu_levels==$rows->id) selected="" @endif>&nbsp;&nbsp;&nbsp;{{$rows->name}}</option>
-              @endforeach
-
-
-
-            </select>
-          </div>
-          @else
-          <div class="form-group">
-            <label for="exampleInputEmail1">Select Categories</label>
-            <select class="form-control" name="menu_levels">
-              <?php $catList = DB::table('categories')->get(); ?>
+              <?php $first = DB::table('categories')->where('menu_levels','0')->get(); ?>
               <option value="0">Create First level categories (Level)</option>
-                @foreach($catList as $rows)
-                  <option value="{{$rows->id}}">{{$rows->name}}</option>
+                @foreach($first as $one)
+                  <option value="{{$one->id}}">01 - {{$one->name}}</option>
+                  
+                  <?php $second = DB::table('categories')->where('menu_levels',$one->id)->where('user_levels','1')->get(); ?>
+                  @foreach($second as $two)
+                  <option value="{{$two->id}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02 - {{$two->name}}</option>
+                  
+                  <?php $third = DB::table('categories')->where('menu_levels',$two->id)->where('user_levels','2')->get(); ?>
+                  @foreach($third as $three)
+                  <option value="{{$three->id}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;03- {{$three->name}}</option>
+                  @endforeach
+                  @endforeach
                 @endforeach
             </select>
           </div>
-          @endif
 
           
           <div class="form-group">

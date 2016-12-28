@@ -1,3 +1,6 @@
+<?php
+Auth::logout();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,7 +37,7 @@
     <body class=" login">
         <!-- BEGIN LOGO -->
         <div class="logo">
-            <a href="index.html">
+            <a href="{{url('la-admin/item')}}">
                 <img src="{{url('backend')}}/assets/pages/img/logo-big.png" alt="" /> </a>
         </div>
         <!-- END LOGO -->
@@ -80,7 +83,7 @@
                     </label>
                     <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
                 </div>
-                <div class="login-options">
+{{--                 <div class="login-options">
                     <h4>Or login with</h4>
                     <ul class="social-icons">
                         <li>
@@ -97,7 +100,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="create-account">
+ --}}                <div class="create-account">
                     <p>
                         <a href="{{url('la-admin/registration')}}" id="register-btn" class="uppercase">Create an account</a>
                     </p>
