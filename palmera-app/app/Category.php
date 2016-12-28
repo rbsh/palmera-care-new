@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     public function childs(){
-    	return $this->belongsTo('App\Category','id','menu_levels');
+    	return $this->hasMany('App\Category','menu_levels','id');
     }
 }
