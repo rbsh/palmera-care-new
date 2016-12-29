@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/','HomeController@index');
+Route::get('product/{title}/{id}','ProductDetailController@details')->name('product_detail');
 
 Route::get('la-admin/login', function () {
     return view('admin/login');

@@ -55,7 +55,7 @@
         </div>
         <div class="col-lg-7 col-md-4 col-xs-6"> 
           <!-- Header Logo -->
-          <div class="logo"><a title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="{{url('assets')}}/images/logo.png"></a> </div>
+          <div class="logo"><a title="Magento Commerce" href="{{url('/')}}"><img alt="Magento Commerce" src="{{url('assets')}}/images/logo.png"></a> </div>
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-2 col-md-4 col-xs-6">
