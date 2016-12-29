@@ -87,23 +87,23 @@ class ItemController extends Controller
 
 
         $item->price_2 = $request->price_2 ?: null;
-        $item->dis_price_2 = $request->dis_price_2 ?: null;;
-        $item->size_2 = $request->size_2 ?: null;;
-        $item->qty_2 = $request->qty_2 ?: null;;
-        $item->max_2 = $request->max_2 ?: null;;
+        $item->dis_price_2 = $request->dis_price_2 ?: null;
+        $item->size_2 = $request->size_2 ?: null;
+        $item->qty_2 = $request->qty_2 ?: null;
+        $item->max_2 = $request->max_2 ?: null;
 
 
-        $item->price_3 = $request->price_3 ?: null;;
-        $item->dis_price_3 = $request->dis_price_3 ?: null;;
-        $item->size_3 = $request->size_3 ?: null;;
-        $item->qty_3 = $request->qty_3 ?: null;;
-        $item->max_3 = $request->max_3 ?: null;;
+        $item->price_3 = $request->price_3 ?: null;
+        $item->dis_price_3 = $request->dis_price_3 ?: null;
+        $item->size_3 = $request->size_3 ?: null;
+        $item->qty_3 = $request->qty_3 ?: null;
+        $item->max_3 = $request->max_3 ?: null;
 
-        $item->price_4 = $request->price_4 ?: null;;
-        $item->dis_price_4 = $request->dis_price_4 ?: null;;
-        $item->size_4 = $request->size_4 ?: null;;
-        $item->qty_4 = $request->qty_4 ?: null;;
-        $item->max_4 = $request->max_4 ?: null;;
+        $item->price_4 = $request->price_4 ?: null;
+        $item->dis_price_4 = $request->dis_price_4 ?: null;
+        $item->size_4 = $request->size_4 ?: null;
+        $item->qty_4 = $request->qty_4 ?: null;
+        $item->max_4 = $request->max_4 ?: null;
 
         $item->tab_title_1 = $request->tab_title_1;
         $item->tab_title_2 = $request->tab_title_2;
@@ -200,26 +200,30 @@ class ItemController extends Controller
         $item->text = $request->text;
         $item->delivery_area = $request->delivery_area;
         $item->video = $request->video;
+
         $item->price_1 = $request->price_1;
         $item->dis_price_1 = $request->dis_price_1;
         $item->size_1 = $request->size_1;
         $item->qty_1 = $request->qty_1;
         $item->max_1 = $request->max_1;
-        $item->price_2 = $request->price_2;
-        $item->dis_price_2 = $request->dis_price_2;
-        $item->size_2 = $request->size_2;
-        $item->qty_2 = $request->qty_2;
-        $item->max_2 = $request->max_2;
-        $item->price_3 = $request->price_3;
-        $item->dis_price_3 = $request->dis_price_3;
-        $item->size_3 = $request->size_3;
-        $item->qty_3 = $request->qty_3;
-        $item->max_3 = $request->max_3;
-        $item->price_4 = $request->price_4;
-        $item->dis_price_4 = $request->dis_price_4;
-        $item->size_4 = $request->size_4;
-        $item->qty_4 = $request->qty_4;
-        $item->max_4 = $request->max_4;
+
+        $item->price_2 = $request->price_2 ?: null;
+        $item->dis_price_2 = $request->dis_price_2 ?: null;
+        $item->size_2 = $request->size_2 ?: null;
+        $item->qty_2 = $request->qty_2 ?: null;
+        $item->max_2 = $request->max_2 ?: null;
+
+        $item->price_3 = $request->price_3 ?: null;
+        $item->dis_price_3 = $request->dis_price_3 ?: null;
+        $item->size_3 = $request->size_3 ?: null;
+        $item->qty_3 = $request->qty_3 ?: null;
+        $item->max_3 = $request->max_3 ?: null;
+
+        $item->price_4 = $request->price_4 ?: null;
+        $item->dis_price_4 = $request->dis_price_4 ?: null;
+        $item->size_4 = $request->size_4 ?: null;
+        $item->qty_4 = $request->qty_4 ?: null;
+        $item->max_4 = $request->max_4 ?: null;
 
         $item->tab_title_1 = $request->tab_title_1;
         $item->tab_title_2 = $request->tab_title_2;

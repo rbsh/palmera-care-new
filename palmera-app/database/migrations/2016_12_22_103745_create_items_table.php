@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('category_id');
             $table->string('item_title');
             $table->string('brand');
-            $table->string('short_desc')->nullable();
+            $table->text('short_desc')->nullable();
             $table->text('text')->nullable();
             $table->string('delivery_area')->nullable();
             $table->string('video')->nullable();
