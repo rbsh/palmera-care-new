@@ -72,7 +72,7 @@ $categories = App\Category::where('status',1)->where('menu_levels',0)->get();
         </div>
         <!--End mobile-menu -->
         <ul id="nav" class="hidden-xs">
-          <li id="nav-home" class="level0 parent drop-menu"><a href="index.html"><span>Home</span></a>
+          <li id="nav-home" class="level0 parent drop-menu"><a href="{{url('/')}}"><span>Home</span></a>
           </li>
           @foreach($categories as $first)
           <li class="level0 nav-5 level-top first"> <a href="#" class="level-top"> <span>{{$first->name}}</span> </a>
@@ -89,7 +89,7 @@ $categories = App\Category::where('status',1)->where('menu_levels',0)->get();
                        @if($second->childs != null && $second->childs->where('menu_levels',$second->id)!=null)
                       <ul class="level1">
                        @foreach($second->childs->where('menu_levels',$second->id) as $third)
-                        <li class="level2 nav-6-1-1"> <a href="#"><span>{{$third->name}}</span></a> </li>
+                        <li class="level2 nav-6-1-1"> <a href="{{url('category?id='.$third->id)}}"><span>{{$third->name}}</span></a> </li>
                         @endforeach
                       </ul>
                       @endif

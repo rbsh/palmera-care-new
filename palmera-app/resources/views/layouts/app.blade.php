@@ -15,7 +15,7 @@
   <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Palmera Care - @yield('title')</title>
+    <title> @yield('title','Palmera Care')</title>
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -27,6 +27,7 @@
 <link rel="stylesheet" type="text/css" href="{{url('assets')}}/css/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="{{url('assets')}}/css/owl.theme.css">
 <link rel="stylesheet" type="text/css" href="{{url('assets')}}/css/animate.css">
+<link rel="stylesheet" type="text/css" href="{{url('assets')}}/lib/toastr/toastr.min.css">
 
  <!-- Scripts -->
     <script>
@@ -82,7 +83,7 @@
 
 <!-- Footer -->
 <footer>
-  <div class="brand-logo">
+{{--   <div class="brand-logo">
     <div class="container">
       <div class="slider-items-products">
         <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
@@ -124,7 +125,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <div class="newsletter-wrap">
     <div class="container">
       <div class="row">
@@ -247,7 +248,15 @@
 <script type="text/javascript" src="{{url('assets')}}/js/revslider.js"></script>
 <script type="text/javascript" src="{{url('assets')}}/js/owl.carousel.min.js"></script> 
 <script type="text/javascript" src="{{url('assets')}}/js/parallax.js"></script> 
+<script type="text/javascript" src="{{url('assets')}}/lib/toastr/toastr.min.js"></script> 
 <script type='text/javascript'>
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+});
+
         jQuery(document).ready(function(){
             jQuery('#rev_slider_4').show().revolution({
                 dottedOverlay: 'none',
@@ -319,6 +328,64 @@
             });
         });
         </script>
+
+        <!-- gallery hear End -->
+<script>
+
+function load_cart(open_cart = false){
+    $('.header_cart').load('{{url('cart')}}',function(){
+        slideEffectAjax();        
+    });
+}
+function delete_cart(row_id = false){
+    $.post('{{url('cart/remove')}}', {row_id:row_id}, function(data, textStatus, xhr) {
+      load_cart();
+    });
+}
+jQuery(document).ready(function($) {
+  load_cart();
+});
+
+    $(".add_to_cart").click(function(e) {
+        e.preventDefault();
+        var form = $(this).closest('form');
+         var $btn = $(this).button('loading')
+
+      
+    $.ajax({
+        url     : "{{url('cart/add')}}",
+        type    : form.attr("method"),
+        data    : form.serialize(),
+        dataType: "json",
+        success : function ( json ) {
+            $btn.button('reset')
+            toastr.success( json.message , "" ); 
+            load_cart();
+        },
+        error   : function ( jqXhr, json, errorThrown ) 
+        {
+            $btn.button('reset')
+             if(jqXhr.status  ==0) {
+                  toastr.error( 'could not connect to server' , "Connection Error " );
+             }
+            var errors = jqXhr.responseJSON.error;
+            var errorsHtml= '';
+            $.each( errors, function( key, value ) {
+                errorsHtml += '<li>' + value + '</li>'; 
+            });
+            toastr.error( errorsHtml , "Validation Error " );
+        }
+    })
+    .done(function(response){})
+    .fail(function( jqXHR, json ) {});
+
+       
+      
+});
+
+
+
+</script>
 </body>
 </html>
 

@@ -58,50 +58,9 @@
           <div class="logo"><a title="Magento Commerce" href="{{url('/')}}"><img alt="Magento Commerce" src="{{url('assets')}}/images/logo.png"></a> </div>
           <!-- End Header Logo --> 
         </div>
-        <div class="col-lg-2 col-md-4 col-xs-6">
-          <div class="top-cart-contain pull-right"> 
-            <!-- Top Cart -->
-            <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#"> <i class="glyphicon glyphicon-shopping-cart"></i>
-                <div class="cart-box"><span class="title">cart</span><span id="cart-total">2 item </span></div>
-                </a></div>
-              <div>
-                <div style="display: none;" class="top-cart-content arrow_box">
-                  <div class="block-subtitle">Recently added item(s)</div>
-                  <ul id="cart-sidebar" class="mini-products-list">
-                    <li class="item even"> <a class="product-image" href="#" title="Downloadable Product "><img alt="Downloadable Product " src="{{url('assets')}}/products-images/mini_cart_thumb.jpg" width="80"></a>
-                      <div class="detail-item">
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-                          <p class="product-name"> <a href="#" title="Downloadable Product">Downloadable Product </a> </p>
-                        </div>
-                        <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
-                      </div>
-                    </li>
-                    <li class="item last odd"> <a class="product-image" href="#" title="  Sample Product "><img alt="  Sample Product " src="{{url('assets')}}/products-images/mini_cart_thumb.jpg" width="80"></a>
-                      <div class="detail-item">
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-                          <p class="product-name"> <a href="#" title="  Sample Product "> Sample Product </a> </p>
-                        </div>
-                        <div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>
-                  <div class="actions">
-                    <button class="btn-checkout" type="button"><span>Checkout</span></button>
-                    <button class="view-cart" type="button"><span>View Cart</span></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Top Cart -->
-            <div id="ajaxconfig_info" style="display:none"> <a href="#/"></a>
-              <input value="" type="hidden">
-              <input id="enable_module" value="1" type="hidden">
-              <input class="effect_to_cart" value="1" type="hidden">
-              <input class="title_shopping_cart" value="Go to shopping cart" type="hidden">
-            </div>
-          </div>
+        <div class="col-lg-2 col-md-4 col-xs-6 header_cart">
+
+        
         </div>
       </div>
     </div>

@@ -12,7 +12,14 @@
 */
 
 Route::get('/','HomeController@index');
+Route::get('category','CategoryController@index')->name('category');
 Route::get('product/{title}/{id}','ProductDetailController@details')->name('product_detail');
+
+//cart 
+Route::post('cart/add','CartController@add');
+Route::post('cart/remove','CartController@remove');
+Route::get('cart','CartController@index');
+
 
 Route::get('la-admin/login', function () {
     return view('admin/login');

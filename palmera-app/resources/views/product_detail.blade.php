@@ -80,9 +80,23 @@
                   <p>{{$product->text}}</p>
                 </div>
                 <div class="add-to-box">
+                 <div class="add-to-cart">
+                    <label for="qty">Size:</label>
+                    <div class="pull-left">
+                       <div class="custom pull-left">
+                        <select name="size" style="width: 150px;">
+                            @foreach($product->sizes as $row)
+                          <option value="{{$row['size']}}">{{$row['size']}}</option>
+                          @endforeach;
+                        </select>
+                       </div>
+                   </div>   
+                   </div> 
+                   <br><br><br>
                   <div class="add-to-cart">
                     <label for="qty">Quantity:</label>
                     <div class="pull-left">
+                       
                       <div class="custom pull-left">
                         <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
                         <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
@@ -90,7 +104,8 @@
                       </div>
                     </div>
                     <div class="pull-left">
-                      <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
+                      <input type="hidden" name="id" value="{{$product->id}}">
+                      <button  class="button btn-cart add_to_cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
                     </div>
                   </div>
                   <div class="email-addto-box">

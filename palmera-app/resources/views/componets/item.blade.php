@@ -26,7 +26,12 @@
                           </div>
                         </div>
                         <div class="actions">
-                          <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
+                          <form method="post">
+                            <input type="hidden" name="id" value="{{$item->id}}">
+                            <input type="hidden" name="qty" value="1">
+                            <input type="hidden" name="size" value="{{$item->sizes->first()['size']}}">
+                          <button  class="button btn-cart add_to_cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
+                          </form>
                         </div>
                       </div>
                     </div>
