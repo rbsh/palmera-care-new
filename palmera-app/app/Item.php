@@ -3,12 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Item extends Model
+class Item extends Model  
 {
+       // use Buyable;
+
     public function scopeActive($query)
     {
         return $query->where('status', 1);
+    }
+
+    public function scopeLatest($query)
+    {
+        return $query->orderBy('id', 'desc');
     }
 
      public function getSlugAttribute()

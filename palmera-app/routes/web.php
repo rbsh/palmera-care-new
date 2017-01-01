@@ -20,6 +20,8 @@ Route::post('cart/add','CartController@add');
 Route::post('cart/remove','CartController@remove');
 Route::get('cart','CartController@index');
 
+Route::get('checkout','CheckoutController@cart');
+
 
 Route::get('la-admin/login', function () {
     return view('admin/login');

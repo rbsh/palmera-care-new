@@ -35,7 +35,6 @@ class CartController extends Controller
         $items = array(
             'id'       => $item->id,
             'name'     => $item->item_title,
-            'image'     => url($item->photo),
             'price'    => $price,
             'options'  => [
                 'size'  => $request->size,
@@ -44,7 +43,10 @@ class CartController extends Controller
         );
 
         // Make the insert...
-        Cart::add($items);
+        $cart = Cart::add($items);//->associate(App\Item::classs);
+    // Cart::associate($cart->rowId, \App\Item::class);
+
+
 
         $data['message'] = $item->item_title . " aded to your cart";
         $data['status']  = true;
@@ -56,6 +58,6 @@ class CartController extends Controller
 
     }
     public function index(){
-    	return view('cart');
+    	return view('header_cart');
     }
 }

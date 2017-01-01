@@ -342,6 +342,11 @@ function delete_cart(row_id = false){
       load_cart();
     });
 }
+function delete_main_cart(row_id = false){
+    $.post('{{url('cart/remove')}}', {row_id:row_id}, function(data, textStatus, xhr) {
+      location.reload();
+    });
+}
 jQuery(document).ready(function($) {
   load_cart();
 });
