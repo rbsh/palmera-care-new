@@ -50,7 +50,7 @@
 <!-- end nav --> 
 
 <!-- header service -->
-<div class="header-service">
+{{-- <div class="header-service">
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-3">
@@ -76,7 +76,7 @@
     </div>
   </div>
 </div>
-<!-- End header service --> 
+ --}}<!-- End header service --> 
 
  @yield('content')
 
@@ -126,7 +126,7 @@
       </div>
     </div>
   </div> --}}
-  <div class="newsletter-wrap">
+{{--   <div class="newsletter-wrap">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8">
@@ -159,7 +159,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-inner">
+ --}}{{--   <div class="footer-inner">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3">
@@ -224,18 +224,18 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
+ --}}  <div class="footer-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015. All Rights Reserved. Designed by <a href="#"> magikcommerce.com</a></div>
+        <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2017. All Rights Reserved. Palmeracare.com</a></div>
         <div class="col-sm-7 col-xs-12 company-links">
-          <ul class="links">
+{{--           <ul class="links">
             <li><a title="Magento Themes" href="#">Magento Themes</a></li>
             <li><a title="Premium Themes" href="#">Premium Themes</a></li>
             <li><a title="Responsive Themes" href="#">Responsive Themes</a></li>
             <li class="last"><a title="Magento Extensions" href="#">Magento Extensions</a></li>
           </ul>
-        </div>
+ --}}        </div>
       </div>
     </div>
   </div>
