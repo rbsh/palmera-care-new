@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Category;
 use Illuminate\Database\Eloquent\Model;
 class Item extends Model  
 {
@@ -36,5 +37,8 @@ class Item extends Model
     	endfor;
         $price_sizes = collect($price_sizes);
     	return $price_sizes->where('size','!=',null);
+    }
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 }

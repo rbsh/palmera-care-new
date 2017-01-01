@@ -10,7 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         $items =Item::Active()->get();
+        $single =Item::Active()->Latest()->first();
         $latest =Item::Active()->Latest()->get();
-        return view('home',compact('items','latest'));
+        return view('home',compact('items','latest','single'));
     }
 }

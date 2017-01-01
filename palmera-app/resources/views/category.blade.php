@@ -2,21 +2,7 @@
 
 @section('content')
 
-{{-- <!-- Breadcrumbs -->
-<div class="breadcrumbs">
-  <div class="container">
-    <div class="row">
-      <div class="inner">
-        <ul>
-          <li class="home"> <a title="Go to Home Page" href="http://www.magikcommerce.com/">Home</a><span>&mdash;&rsaquo;</span></li>
-          <li class=""> <a title="Go to Home Page" href="http://www.magikcommerce.com/">Women</a><span>&mdash;&rsaquo;</span></li>
-          <li class="category13"><strong>Tops & Tees</strong></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Breadcrumbs End -->  --}}
+
 <!-- Main Container -->
 <div class="main-container col2-left-layout">
   <div class="container">
@@ -24,7 +10,7 @@
       <div class="col-main col-sm-9 col-sm-push-3">
         <article class="col-main">
           <div class="page-title">
-            <h2>Tops & Tees</h2>
+            <h2>{{$category->name}}</h2>
           </div>
          
           <div class="toolbar">
@@ -97,174 +83,7 @@
       </div>
       <div class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
         <aside class="col-left sidebar  wow bounceInLeft animated">
-          <div class="side-nav-categories">
-            <div class="block-title"> Categories </div>
-            <div class="box-content box-category">
-              <ul id="magicat">
-                <li class="level0- level0 open"> <span class="magicat-cat"><a href="#"><span>Women</span></a></span>
-                  <ul>
-                    <li class="first level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Tops</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Evening Tops</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Shirts &amp; Blouses</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Tunics</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Vests</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Bags</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Bags</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Designer Handbags</span></a></span> </li>
-                        <li class="level2- level2 "> <span class="magicat-cat"><a href="#"><span>Purses</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Socks &amp; Shoulder Bags</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Jewellery</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Bracelets</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Sweat Necklaces &amp; Pendants</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Pins &amp; Brooches</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1  open"> <span class="magicat-cat"><a href="#"><span>Dresses</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Casual Dresses</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Evening</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Designer</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Party</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Lingerie</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Bras</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Bodies</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Lingerie Sets</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Shapewear</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Jackets</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Coats</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Jackets</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Leather Jackets</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Blazers</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Swimwear</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Swimsuits</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Beach Clothing</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Brand Stores</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Bikinis</span></a></span> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="level0- level0 open"> <span class="magicat-cat"><a href="#"><span>Men</span></a></span>
-                  <ul>
-                    <li class="first level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Shoes</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Sport Shoes</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Casual Shoes</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Leather Shoes</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Canvas Shoes</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Dresses</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Casual Dresses</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Evening</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Designer</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Party</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Jackets</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Coats</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Formal Jackets</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Leather Jackets</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Blazers</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1  open"> <span class="magicat-cat"><a href="#"><span>Watches</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Fasttrack</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Casio</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Titan</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Tommy-Hilfiger</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Sunglasses</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Ray Ban</span></a></span> </li>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Fasttrack</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Police</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Oakley </span></a></span> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="level0- level0 open"> <span class="magicat-cat"><a href="#"><span>Electronics</span></a></span>
-                  <ul>
-                    <li class="first level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Mobiles</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span> Samsung</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Nokia</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>iPhone</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Sony</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Mobiles Accesories</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Mobile Memory Cards</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Cases &amp; Covers</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Mobile Headphones</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Bluetooth Headsets</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Cameras</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Camcorders</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Point &amp; Shoot</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Digital SLR</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Camera Accesories</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Audio &amp; Video</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>MP3 Players</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>iPods</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Soeakers</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Video Players</span></a></span> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="level0- level1 open"> <span class="magicat-cat"><a href="#"><span>Furniture</span></a></span>
-                  <ul>
-                    <li class="first level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Living Room</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Racks &amp; Cabinets</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Sofas</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Chairs</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Tables</span></a></span> </li>
-                      </ul>
-                    </li>
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="#"><span>Dining &amp; Bar</span></a></span>
-                      <ul>
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="#"><span>Dining Table Sets</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Serving Trolleys</span></a></span> </li>
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="#"><span>Bar Counters</span></a></span> </li>
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="#"><span>Dining Cabinets</span></a></span> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="level0- level0 last"> <span class="magicat-cat"><a href="#"><span>Boys</span></a></span> </li>
-                <li class="level0- level0 last"> <span class="magicat-cat"><a href="#"><span>Girls</span></a></span> </li>
-              </ul>
-            </div>
-          </div>
+        
           <div class="block block-layered-nav">
             <div class="block-title">Shop By</div>
             <div class="block-content">
@@ -308,11 +127,7 @@
               </dl>
             </div>
           </div>
-      
-       
-         
-
-     
+    
         </aside>
       </div>
     </div>
