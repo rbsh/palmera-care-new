@@ -6,30 +6,30 @@
           <div class="col-sm-4 col-xs-7"> 
             <!-- Header Language -->
             <div class="dropdown block-language-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#"> <img src="{{url('assets')}}/images/english.png" alt="language"> English <span class="caret"></span> </a>
-              <ul class="dropdown-menu" role="menu">
+{{--               <ul class="dropdown-menu" role="menu">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{url('assets')}}/images/english.png" alt="language"> English </a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{url('assets')}}/images/francais.png" alt="language"> French </a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{url('assets')}}/images/german.png" alt="language"> German </a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{url('assets')}}/images/spanish.png" alt="language"> Spanish </a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{url('assets')}}/images/swedish.png" alt="language"> Swedish </a></li>
               </ul>
-            </div>
+ --}}            </div>
             
             <!-- End Header Language --> 
             
             <!-- Header Currency -->
-            <div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> USD <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
+            <div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> AED <span class="caret"></span></a>
+{{--               <ul class="dropdown-menu" role="menu">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> $ - Dollar </a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> £ - Pound </a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> € - Euro </a></li>
               </ul>
-            </div>
+ --}}            </div>
             
             <!-- End Header Currency --> 
             
             <!-- Default Welcome Message -->
-            <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
+            <div class="welcome-msg hidden-xs"> Welcome to palmera - care </div>
             <!-- End Default Welcome Message --> 
           </div>
           <div class="col-sm-8 col-xs-5">
@@ -49,13 +49,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-4">
-          <div class="phone"><em class="icon-phone">&nbsp;</em>
-            <div class="phone-box"><strong>Need help?</strong> <span>+1 800 123 1234</span></div>
-          </div>
+          <div class="logo"><a title="Magento Commerce" href="{{url('/')}}"><img alt="Magento Commerce" src="{{url('assets')}}/images/logo.png"></a> </div>
         </div>
         <div class="col-lg-7 col-md-4 col-xs-6"> 
           <!-- Header Logo -->
-          <div class="logo"><a title="Magento Commerce" href="{{url('/')}}"><img alt="Magento Commerce" src="{{url('assets')}}/images/logo.png"></a> </div>
+          
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-2 col-md-4 col-xs-6 header_cart">
