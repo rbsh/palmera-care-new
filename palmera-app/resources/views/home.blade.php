@@ -32,7 +32,6 @@
       <aside class="col-xs-12 col-sm-12 col-md-4">
         <div class="RHS-banner">
           <div class="add">
-
               <a href="#"><img alt="banner-img" src="{{url($single->photo)}}"></a>
           </div>
         </div>

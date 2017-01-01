@@ -4,7 +4,7 @@
                   <h2 class="product-name"><a href="#">{{$item->item_title}}</a></h2>
                   <div class="price-box">
                  
-                    <p class="special-price"> <span class="price-label"></span> <span class="price"> ${{$item->price_1}} </span> </p>
+                    <p class="special-price"> <span class="price-label"></span> <span class="price">{{$item->price_1}} AED</span> </p>
                   </div>
                   <div class="ratings">
                     <div class="rating-box">

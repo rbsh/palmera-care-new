@@ -51,9 +51,9 @@
                   <tr class="first odd item">
                     <td class="image"><a class="product-image" href="#"><img width="75" height="75" src="{{url($item->photo)}}"></a></td>
                     <td><h2 class="product-name"> <a href="#">{{$row->name}}  {{ ($row->options->has('size') ? $row->options->size : '')}}</a> </h2></td>
-                    <td class="a-right"><span class="cart-price"> <span class="price">${{$row->price}}</span> </span></td>
+                    <td class="a-right"><span class="cart-price"> <span class="price">{{$row->price}} AED</span> </span></td>
                     <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="{{$row->qty}}" name="cart[15945][qty]"></td>
-                    <td class="a-right movewishlist"><span class="cart-price"> <span class="price">${{$row->total}}</span> </span></td>
+                    <td class="a-right movewishlist"><span class="cart-price"> <span class="price">{{$row->total}} AED</span> </span></td>
                     <td class="a-center"></td>
                     <td class="a-center last"><a class="button remove-item" onclick="delete_main_cart('{{$row->rowId}}')" title="Remove item" href="#"><span><span>Remove item</span></span></a></td>
                   </tr>
@@ -89,18 +89,18 @@
               <tfoot>
                 <tr>
                   <td colspan="1" class="a-left"><strong>Grand Total</strong></td>
-                  <td class="a-right"><strong><span class="price">${{Cart::total()}}</span></strong></td>
+                  <td class="a-right"><strong><span class="price">{{Cart::total()}} AED</span></strong></td>
                 </tr>
                  
               </tfoot>
               <tbody>
                 <tr>
                   <td colspan="1" class="a-left"> Subtotal </td>
-                  <td class="a-right"><span class="price">${{Cart::subtotal()}}</span></td>
+                  <td class="a-right"><span class="price">{{Cart::subtotal()}} AED</span></td>
                 </tr>
                 <tr>
                   <td colspan="1" class="a-left"> Tax </td>
-                  <td class="a-right"><span class="price">${{Cart::tax()}}</span></td>
+                  <td class="a-right"><span class="price">{{Cart::tax()}} AED</span></td>
                 </tr>
               </tbody>
             </table>

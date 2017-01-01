@@ -21,7 +21,7 @@
                         <div class="item-price">
                           <div class="price-box">
                           
-                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> ${{$item->price_1}}</span> </p>
+                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{$item->price_1}} AED</span> </p>
                           </div>
                         </div>
                       </div>

@@ -23,13 +23,13 @@
                           <p class="product-name"> <a href="#">{{$row->name}}
                           {{ ($row->options->has('size') ? $row->options->size : '')}}</a> </p>
                         </div>
-                        <div class="product-details-bottom"> <span class="price">${{$row->price}}</span> <span class="title-desc">Qty:</span> <strong>{{$row->qty}}</strong> </div>
+                        <div class="product-details-bottom"> <span class="price">{{$row->price}} AED</span> <span class="title-desc">Qty:</span> <strong>{{$row->qty}}</strong> </div>
                       </div>
                     </li>
                    @endforeach 
                    
                   </ul>
-                  <div class="top-subtotal">Subtotal: <span class="price">${{Cart::subtotal()}}</span></div>
+                  <div class="top-subtotal">Subtotal: <span class="price">{{Cart::subtotal()}} AED</span></div>
                   <div class="actions">
                     <a class="btn-checkout" href="{{url('checkout')}}" type="button"><span>Checkout</span></a>
                     {{-- <button class="view-cart" type="button"><span>View Cart</span></button> --}}

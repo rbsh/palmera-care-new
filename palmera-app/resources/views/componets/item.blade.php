@@ -21,7 +21,8 @@
                               </div>
                             </div>
                             <div class="item-price">
-                              <div class="price-box"> <span class="regular-price"> <span class="price">${{$item->price_1}}</span> </span> </div>
+                              <div class="price-box"> <span class="regular-price"> <span class="price">
+                              {{$item->price_1}} AED</span> </span> </div>
                             </div>
                           </div>
                         </div>
