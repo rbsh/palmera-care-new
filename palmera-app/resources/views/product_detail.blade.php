@@ -57,7 +57,7 @@
                 <div class="price-block">
                   <div class="price-box">
                     <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $315.99 </span> </p>
-                    <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"> ${{$product->price_1}} </span> </p>
+                    <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"> AED {{$product->price_1}} </span> </p>
                   </div>
                 </div>
                 <div class="short-description">
