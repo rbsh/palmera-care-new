@@ -21,11 +21,12 @@ class ItemController extends Controller
     {
         $userid = Auth::user()->id;
         if($userid==1){
-           $item = \App\Item::get();
+            //dd($userid);
+           $item = \App\Item::get()->unique('uniqueid');
+
         } else {
            $item = \App\Item::where('user_id',$userid)->get();
         }
-        
         return view('admin.item.index',compact('item'));
     }
 
@@ -62,97 +63,106 @@ class ItemController extends Controller
             'price_1' => 'required',       
             'dis_price_1' => 'required',       
             'size_1' => 'required',       
-            'qty_1' => 'required',       
-            'max_1' => 'required',       
+            // 'qty_1' => 'required',       
+            // 'max_1' => 'required',       
         ]);
 
 
         $userid = Auth::user()->id;
-
-        $item = new \App\Item;
-        $item->user_id = $userid;
-        $item->category_id = $request->category_id;
-        $item->item_title = $request->item_title;
-        $item->brand = $request->brand;
-        $item->short_desc = $request->short_desc;
-        $item->text = $request->text;
-        $item->delivery_area = $request->delivery_area;
-        $item->video = $request->video;
-
-        $item->price_1 = $request->price_1;
-        $item->dis_price_1 = $request->dis_price_1;
-        $item->size_1 = $request->size_1;
-        $item->qty_1 = $request->qty_1;
-        $item->max_1 = $request->max_1;
+        $uniqueId = uniqid();
+            $category_id = $request->category_id;
+                foreach($category_id as $catid){
+                    if($category_id){
 
 
-        $item->price_2 = $request->price_2 ?: null;
-        $item->dis_price_2 = $request->dis_price_2 ?: null;
-        $item->size_2 = $request->size_2 ?: null;
-        $item->qty_2 = $request->qty_2 ?: null;
-        $item->max_2 = $request->max_2 ?: null;
+                        $item = new \App\Item;
+                        $item->user_id = $userid;
+                        $item->uniqueid = $uniqueId;
 
+                        $item->category_id = $catid;
+                        $item->item_title = $request->item_title;
+                        $item->brand = $request->brand;
+                        $item->short_desc = $request->short_desc;
+                        $item->text = $request->text;
+                        $item->delivery_area = $request->delivery_area;
+                        $item->video = $request->video;
 
-        $item->price_3 = $request->price_3 ?: null;
-        $item->dis_price_3 = $request->dis_price_3 ?: null;
-        $item->size_3 = $request->size_3 ?: null;
-        $item->qty_3 = $request->qty_3 ?: null;
-        $item->max_3 = $request->max_3 ?: null;
+                        $item->price_1 = $request->price_1 ?: null;
+                        $item->dis_price_1 = $request->dis_price_1 ?: null;
+                        $item->size_1 = $request->size_1 ?: null;
+                        $item->qty_1 = $request->qty_1 ?: null;
+                        $item->max_1 = $request->max_1 ?: null;
 
-        $item->price_4 = $request->price_4 ?: null;
-        $item->dis_price_4 = $request->dis_price_4 ?: null;
-        $item->size_4 = $request->size_4 ?: null;
-        $item->qty_4 = $request->qty_4 ?: null;
-        $item->max_4 = $request->max_4 ?: null;
+                        $item->price_2 = $request->price_2 ?: null;
+                        $item->dis_price_2 = $request->dis_price_2 ?: null;
+                        $item->size_2 = $request->size_2 ?: null;
+                        $item->qty_2 = $request->qty_2 ?: null;
+                        $item->max_2 = $request->max_2 ?: null;
 
-        $item->tab_title_1 = $request->tab_title_1;
-        $item->tab_title_2 = $request->tab_title_2;
-        $item->tab_title_3 = $request->tab_title_3;
-        $item->tab_title_4 = $request->tab_title_4;
-        $item->tab_title_5 = $request->tab_title_5;
-        $item->tab_title_6 = $request->tab_title_6;
+                        $item->price_3 = $request->price_3 ?: null;
+                        $item->dis_price_3 = $request->dis_price_3 ?: null;
+                        $item->size_3 = $request->size_3 ?: null;
+                        $item->qty_3 = $request->qty_3 ?: null;
+                        $item->max_3 = $request->max_3 ?: null;
 
-        $item->tab_text_1 = $request->tab_text_1;
-        $item->tab_text_2 = $request->tab_text_2;
-        $item->tab_text_3 = $request->tab_text_3;
-        $item->tab_text_4 = $request->tab_text_4;
-        $item->tab_text_5 = $request->tab_text_5;
-        $item->tab_text_6 = $request->tab_text_6;
+                        $item->price_4 = $request->price_4 ?: null;
+                        $item->dis_price_4 = $request->dis_price_4 ?: null;
+                        $item->size_4 = $request->size_4 ?: null;
+                        $item->qty_4 = $request->qty_4 ?: null;
+                        $item->max_4 = $request->max_4 ?: null;
 
-        $item->status = "1";
-        $item->row_order = "1";
+                        $item->tab_title_1 = $request->tab_title_1;
+                        $item->tab_title_2 = $request->tab_title_2;
+                        $item->tab_title_3 = $request->tab_title_3;
+                        $item->tab_title_4 = $request->tab_title_4;
+                        $item->tab_title_5 = $request->tab_title_5;
+                        $item->tab_title_6 = $request->tab_title_6;
 
-        if($request->hasFile('photo')) { 
-            $item->photo = $request->file('photo')->store('uploads/'.date('Y-m-d'));
-        } else {
-            $item->photo = "";
-        }
-        if($request->hasFile('image_2')) { 
-            $item->image_2 = $request->file('image_2')->store('uploads/'.date('Y-m-d'));
-        } else {
-            $item->image_2 = "";
-        }
+                        $item->tab_text_1 = $request->tab_text_1;
+                        $item->tab_text_2 = $request->tab_text_2;
+                        $item->tab_text_3 = $request->tab_text_3;
+                        $item->tab_text_4 = $request->tab_text_4;
+                        $item->tab_text_5 = $request->tab_text_5;
+                        $item->tab_text_6 = $request->tab_text_6;
 
-        if($request->hasFile('image_3')) { 
-            $item->image_3 = $request->file('image_3')->store('uploads/'.date('Y-m-d'));
-        } else {
-            $item->image_3 = "";
-        }
-        if($request->hasFile('image_4')) { 
-            $item->image_4 = $request->file('image_4')->store('uploads/'.date('Y-m-d'));
-        } else {
-            $item->image_4 = "";
-        }
+                        $item->status = "1";
+                        $item->row_order = "1";
 
-        if($request->hasFile('image_1')) { 
-            $item->image_1 = $request->file('image_1')->store('uploads/'.date('Y-m-d'));
-        }  else {
-            $item->image_1 = "";
-        }
-        
-        if($item->save()){
-            return redirect('la-admin/item/create')->with(['success'=>'true']);
-        }
+                        if($request->hasFile('photo')) { 
+                            $item->photo = $request->file('photo')->store('uploads/'.date('Y-m-d'));
+                        } else {
+                            $item->photo = "";
+                        }
+                        if($request->hasFile('image_2')) { 
+                            $item->image_2 = $request->file('image_2')->store('uploads/'.date('Y-m-d'));
+                        } else {
+                            $item->image_2 = "";
+                        }
+
+                        if($request->hasFile('image_3')) { 
+                            $item->image_3 = $request->file('image_3')->store('uploads/'.date('Y-m-d'));
+                        } else {
+                            $item->image_3 = "";
+                        }
+                        if($request->hasFile('image_4')) { 
+                            $item->image_4 = $request->file('image_4')->store('uploads/'.date('Y-m-d'));
+                        } else {
+                            $item->image_4 = "";
+                        }
+
+                        if($request->hasFile('image_1')) { 
+                            $item->image_1 = $request->file('image_1')->store('uploads/'.date('Y-m-d'));
+                        }  else {
+                            $item->image_1 = "";
+                        }
+                        
+                        $item->save();
+                    }
+                }
+    
+
+        return redirect('la-admin/item/create')->with(['success'=>'true']);
+
     }
 
     /**
@@ -191,56 +201,60 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $item  = \App\Item::where('id',$id)->first();
+        
 
-        $item->category_id = $request->category_id;
-        $item->item_title = $request->item_title;
-        $item->brand = $request->brand;
-        $item->short_desc = $request->short_desc;
-        $item->text = $request->text;
-        $item->delivery_area = $request->delivery_area;
-        $item->video = $request->video;
+        // $item->category_id = $request->category_id;
+                       // $item->category_id = $catid;
+                        $item->item_title = $request->item_title;
+                        $item->brand = $request->brand;
+                        $item->short_desc = $request->short_desc;
+                        $item->text = $request->text;
+                        $item->delivery_area = $request->delivery_area;
+                        $item->video = $request->video;
 
-        $item->price_1 = $request->price_1;
-        $item->dis_price_1 = $request->dis_price_1;
-        $item->size_1 = $request->size_1;
-        $item->qty_1 = $request->qty_1;
-        $item->max_1 = $request->max_1;
+                        $item->price_1 = $request->price_1 ?: null;
+                        $item->dis_price_1 = $request->dis_price_1 ?: null;
+                        $item->size_1 = $request->size_1 ?: null;
+                        $item->qty_1 = $request->qty_1 ?: null;
+                        $item->max_1 = $request->max_1 ?: null;
 
-        $item->price_2 = $request->price_2 ?: null;
-        $item->dis_price_2 = $request->dis_price_2 ?: null;
-        $item->size_2 = $request->size_2 ?: null;
-        $item->qty_2 = $request->qty_2 ?: null;
-        $item->max_2 = $request->max_2 ?: null;
+                        $item->price_2 = $request->price_2 ?: null;
+                        $item->dis_price_2 = $request->dis_price_2 ?: null;
+                        $item->size_2 = $request->size_2 ?: null;
+                        $item->qty_2 = $request->qty_2 ?: null;
+                        $item->max_2 = $request->max_2 ?: null;
 
-        $item->price_3 = $request->price_3 ?: null;
-        $item->dis_price_3 = $request->dis_price_3 ?: null;
-        $item->size_3 = $request->size_3 ?: null;
-        $item->qty_3 = $request->qty_3 ?: null;
-        $item->max_3 = $request->max_3 ?: null;
+                        $item->price_3 = $request->price_3 ?: null;
+                        $item->dis_price_3 = $request->dis_price_3 ?: null;
+                        $item->size_3 = $request->size_3 ?: null;
+                        $item->qty_3 = $request->qty_3 ?: null;
+                        $item->max_3 = $request->max_3 ?: null;
 
-        $item->price_4 = $request->price_4 ?: null;
-        $item->dis_price_4 = $request->dis_price_4 ?: null;
-        $item->size_4 = $request->size_4 ?: null;
-        $item->qty_4 = $request->qty_4 ?: null;
-        $item->max_4 = $request->max_4 ?: null;
+                        $item->price_4 = $request->price_4 ?: null;
+                        $item->dis_price_4 = $request->dis_price_4 ?: null;
+                        $item->size_4 = $request->size_4 ?: null;
+                        $item->qty_4 = $request->qty_4 ?: null;
+                        $item->max_4 = $request->max_4 ?: null;
 
-        $item->tab_title_1 = $request->tab_title_1;
-        $item->tab_title_2 = $request->tab_title_2;
-        $item->tab_title_3 = $request->tab_title_3;
-        $item->tab_title_4 = $request->tab_title_4;
-        $item->tab_title_5 = $request->tab_title_5;
-        $item->tab_title_6 = $request->tab_title_6;
+                        $item->tab_title_1 = $request->tab_title_1;
+                        $item->tab_title_2 = $request->tab_title_2;
+                        $item->tab_title_3 = $request->tab_title_3;
+                        $item->tab_title_4 = $request->tab_title_4;
+                        $item->tab_title_5 = $request->tab_title_5;
+                        $item->tab_title_6 = $request->tab_title_6;
 
-        $item->tab_text_1 = $request->tab_text_1;
-        $item->tab_text_2 = $request->tab_text_2;
-        $item->tab_text_3 = $request->tab_text_3;
-        $item->tab_text_4 = $request->tab_text_4;
-        $item->tab_text_5 = $request->tab_text_5;
-        $item->tab_text_6 = $request->tab_text_6;
+                        $item->tab_text_1 = $request->tab_text_1;
+                        $item->tab_text_2 = $request->tab_text_2;
+                        $item->tab_text_3 = $request->tab_text_3;
+                        $item->tab_text_4 = $request->tab_text_4;
+                        $item->tab_text_5 = $request->tab_text_5;
+                        $item->tab_text_6 = $request->tab_text_6;
 
-        $item->status = "1";
-        $item->row_order = "1";
+                        $item->status = "1";
+                        $item->row_order = "1";
 
         if($request->hasFile('photo')) { 
             $item->photo = $request->file('photo')->store('uploads/'.date('Y-m-d'));
@@ -260,11 +274,27 @@ class ItemController extends Controller
         }  else {
             $item->image_1 = "";
         }
+$item->save();
+        $model = $item;
 
+        $items = Item::where('uniqueid',$item->uniqueid)->get();
 
+            $new_item = $model->toArray();
+            unset($new_item['created_at']);
+            unset($new_item['id']);
+            unset($new_item['updated_at']);
+            unset($new_item['uniqueid']);
+                
+           foreach($items as $all_item):
+               
+                foreach($new_item as $k=>$v):
+                    $all_item->{$k}=$v;
+                endforeach;
+                $all_item->save();
+           endforeach; 
 
+       
 
-        $item->save();
         return redirect('la-admin/item/'.$id)->with(['success'=>'true']);
     }
 
@@ -288,7 +318,7 @@ class ItemController extends Controller
         // }
 
 
-            $item  = \App\Item::where('id',$id)->first();
+            $item  = \App\Item::where('uniqueid',$id);
             $item->delete();
             return redirect()->back();
 

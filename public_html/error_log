@@ -1,0 +1,8 @@
+[24-Dec-2016 13:17:28 America/Chicago] PHP Warning:  require(/home4/esabdo2017/public_html/palmera-app/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home4/esabdo2017/public_html/palmera-app/bootstrap/autoload.php on line 17
+[24-Dec-2016 13:17:28 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home4/esabdo2017/public_html/palmera-app/bootstrap/../vendor/autoload.php' (include_path='.:/opt/php56/lib/php') in /home4/esabdo2017/public_html/palmera-app/bootstrap/autoload.php on line 17
+[10-Jan-2017 22:09:21 UTC] PHP Fatal error:  Class 'App\Http\Controllers\admin\Input' not found in /home4/esabdo2017/palmera-app/app/Http/Controllers/admin/ItemController.php on line 75
+[11-Jan-2017 08:31:42 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) in /home4/esabdo2017/palmera-app/app/Http/Controllers/admin/ItemController.php on line 160
+[11-Jan-2017 08:35:15 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) in /home4/esabdo2017/palmera-app/app/Http/Controllers/admin/ItemController.php on line 160
+[11-Jan-2017 08:35:18 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) in /home4/esabdo2017/palmera-app/app/Http/Controllers/admin/ItemController.php on line 160
+[12-Jan-2017 06:58:34 UTC] PHP Fatal error:  Call to a member function delete() on null in /home4/esabdo2017/palmera-app/app/Http/Controllers/admin/ItemController.php on line 301
+[12-Jan-2017 10:42:46 UTC] PHP Fatal error:  Call to a member function delete() on null in /home4/esabdo2017/palmera-app/app/Http/Controllers/admin/ItemController.php on line 301

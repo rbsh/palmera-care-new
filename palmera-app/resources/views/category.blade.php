@@ -17,8 +17,10 @@
             <div class="sorter">
                 <div class="view-mode"> 
                 @php
-                	$params = Request::all();
+                  $params = Request::all();
+                  $rangech = Request::all();
                 @endphp
+
                 @if(Request::input('view')=="list")
                  	@php
                 	$params['view'] = 'grid';
@@ -38,12 +40,12 @@
               <label class="left">Sort By: </label>
               <ul>
                 <li><a href="#">Position<span class="right-arrow"></span></a>
-                  <ul>
+{{--                   <ul>
                     <li><a href="#">Name</a></li>
                     <li><a href="#">Price</a></li>
                     <li><a href="#">Position</a></li>
                   </ul>
-                </li>
+ --}}                </li>
               </ul>
               <a class="button-asc left" href="#" title="Set Descending Direction"><span class="glyphicon glyphicon-arrow-up"></span></a> </div>
             <div class="pager">
@@ -92,11 +94,11 @@
                 <dt class="odd">Price</dt>
                 <dd class="odd">
                   <ol>
-                    <li> <a href="#"><span class="price">$0.00</span> - <span class="price">$99.99</span></a> (6) </li>
-                    <li> <a href="#"><span class="price">$100.00</span> and above</a> (6) </li>
+                    <li> <a href="{{route('category',$rangech)}}&range=0"><span class="price">AED 0.00</span> - <span class="price">AED 1000.00</span></a> </li>
+                    <li> <a href="{{route('category',$rangech)}}&range=1000"><span class="price">AED 1000.00</span> and above</a></li>
                   </ol>
                 </dd>
-                <dt class="even">Manufacturer</dt>
+ {{--                <dt class="even">Manufacturer</dt>
                 <dd class="even">
                   <ol>
                     <li> <a href="#">TheBrand</a> (9) </li>
@@ -115,14 +117,14 @@
                     <li> <a href="#">Blue</a> (1) </li>
                   </ol>
                 </dd>
-                <dt class="last even">Size</dt>
+               <dt class="last even">Size</dt>
                 <dd class="last even">
                   <ol>
-                    <li> <a href="#">S</a> (6) </li>
-                    <li> <a href="#">M</a> (6) </li>
-                    <li> <a href="#">L</a> (4) </li>
-                    <li> <a href="#">XL</a> (4) </li>
-                  </ol>
+                    <li> <a href="#">S</a></li>
+                    <li> <a href="#">M</a></li>
+                    <li> <a href="#">L</a></li>
+                    <li> <a href="#">XL</a></li>
+                  </ol> --}} 
                 </dd>
               </dl>
             </div>

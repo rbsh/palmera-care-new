@@ -1,0 +1,2 @@
+[24-Dec-2016 17:04:41 America/Chicago] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home4/esabdo2017/public_html/palmera-app/app/Item.php on line 8
+[24-Dec-2016 17:04:45 America/Chicago] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home4/esabdo2017/public_html/palmera-app/app/Category.php on line 8

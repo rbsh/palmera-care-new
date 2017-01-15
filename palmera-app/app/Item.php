@@ -6,6 +6,23 @@ use App\Category;
 use Illuminate\Database\Eloquent\Model;
 class Item extends Model  
 {
+  public static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            
+        });
+
+        static::updating(function ($model) {
+                  });
+
+        static::deleting(function ($model) {
+      
+        });
+        
+        
+    }
+
        // use Buyable;
 
     public function scopeActive($query)

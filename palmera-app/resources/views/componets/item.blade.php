@@ -7,7 +7,7 @@
                         <div class="thumb-wrapper"><a href="{{ route('product_detail',['title'=>$item->slug,'id'=>$item->id]) }}" class="thumb flip"><span class="face">
 
                         <img src="{{url($item->photo)}}" alt="pr_imgae" width="268"></span><span class="face back"><img src="{{url($item->photo)}}" title="pr_imgae" width="268" alt="Product image"><span class="quick-view" data-product_id="34"><span><i>&nbsp;</i>Quick View</span></span></span></a></div>
-                        <div class="actions"><span class="add-to-links"> <a href="#" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a> <a href="#" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a></span> </div>
+                        <div class="actions"><span class="add-to-links">{{--  <a href="#" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a> <a href="#" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a> --}}</span> </div>
                       </div>
                       <div class="item-info">
                         <div class="info-inner">
@@ -21,8 +21,9 @@
                               </div>
                             </div>
                             <div class="item-price">
-                              <div class="price-box"> <span class="regular-price"> <span class="price">
-                              {{$item->price_1}} AED</span> </span> </div>
+                              <div class="price-box"> <span class="regular-price"> 
+                              <span class="price">
+                              AED {{$item->price_1}}</span> </span> </div>
                             </div>
                           </div>
                         </div>

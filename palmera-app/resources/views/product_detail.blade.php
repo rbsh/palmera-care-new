@@ -23,7 +23,7 @@
                 
                 
                 <div class="product-image">
-                    <div class="large-image"> <a href="p{{url($product->photo)}}" class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20"> <img src="{{url($product->photo)}}"> </a> </div>
+                    <div class="large-image"> <a href="{{url($product->photo)}}" class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20"> <img src="{{url($product->photo)}}"> </a> </div>
                     <div class="flexslider flexslider-thumb">
                       <ul class="previews-list slides">
                       @for($i=1;$i<5;$i++)
@@ -56,8 +56,13 @@
                 <p class="availability in-stock pull-right"><span>In Stock</span></p>
                 <div class="price-block">
                   <div class="price-box">
-                    <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $315.99 </span> </p>
+                    
+                    @if($product->price_1 == $product->dis_price_1)
                     <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"> AED {{$product->price_1}} </span> </p>
+                    @else
+                    <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> AED {{$product->price_1}} </span> </p>
+                    <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"> AED {{$product->dis_price_1}} </span> </p>
+                    @endif
                   </div>
                 </div>
                 <div class="short-description">
@@ -93,13 +98,13 @@
                       <button  class="button btn-cart add_to_cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
                     </div>
                   </div>
-                  <div class="email-addto-box">
+                  {{-- <div class="email-addto-box">
                     <ul class="add-to-links">
                       <li> <a class="link-wishlist" href="#"><span>Add to Wishlist</span></a></li>
                       <li><span class="separator">|</span> <a class="link-compare" href="#"><span>Add to Compare</span></a></li>
                     </ul>
                     <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </form>

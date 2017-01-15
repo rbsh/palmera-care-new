@@ -34,13 +34,22 @@
           </div>
           <div class="col-sm-8 col-xs-5">
             <div class="toplinks">
-              <div class="links">
+{{--               <div class="links">
                 <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
                 <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
                 <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
                 <div class="login"><a href="login.html"><span class="hidden-xs">Log In</span></a></div>
               </div>
-              <!-- links --> 
+ --}}      
+
+<div class="links">
+                <div class="myaccount"><a title="My Account" href="{{url('la-admin/registration')}}"><span class="hidden-xs">Registration</span></a></div>
+                <div class="login"><a href="{{url('la-admin/login')}}"><span class="hidden-xs">Log In</span></a></div>
+              </div>
+
+
+
+         <!-- links --> 
             </div>
           </div>
         </div>

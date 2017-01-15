@@ -86,7 +86,7 @@
                       @endif
                       </td>
                       <td><a href="{{url('la-admin/item/'.$one->id)}}" class="btn btn-xs btn-warning">EDIT</a></td>
-                      <td><form method="post" action="{{url('la-admin/item/'.$one->id)}}">
+                      <td><form method="post" action="{{url('la-admin/item/'.$one->uniqueid)}}">
                       <button class="btn btn btn-xs btn-danger" data-toggle="confirmation" data-original-title="Are you sure ?" title="">DELETE</button>
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}

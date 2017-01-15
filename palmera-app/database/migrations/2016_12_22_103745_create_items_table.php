@@ -16,6 +16,7 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->string('uniqueid');
             $table->integer('category_id');
             $table->string('item_title');
             $table->string('brand');
@@ -28,8 +29,8 @@ class CreateItemsTable extends Migration
             $table->float('price_1');
             $table->float('dis_price_1');
             $table->string('size_1');
-            $table->integer('qty_1');
-            $table->integer('max_1');
+            $table->integer('qty_1')->nullable();
+            $table->integer('max_1')->nullable();
             $table->string('image_1');
 
             $table->float('price_2')->nullable();

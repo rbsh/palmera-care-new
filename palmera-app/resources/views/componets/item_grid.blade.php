@@ -4,7 +4,7 @@
                     <div class="thumb-wrapper">
                       <div class="new-label new-top-left">New</div>
                       <a href="{{ route('product_detail',['title'=>$item->slug,'id'=>$item->id]) }}" class="thumb flip"><span class="face"><img src="{{url($item->photo)}}" alt="pr_imgae" width="250"></span><span class="face back"><img  src="{{url($item->photo)}}" alt="pr_imgae" width="250"><span class="quick-view" data-product_id="34"><span><i>&nbsp;</i>Quick View</span></span></span></a></div>
-                    <div class="actions"><span class="add-to-links"> <a href="#" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a> <a href="#" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a></span> </div>
+                    <div class="actions"><span class="add-to-links">{{--  <a href="#" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a> <a href="#" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a> --}}</span> </div>
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
@@ -15,13 +15,13 @@
                             <div class="rating-box">
                               <div class="rating" style="width:0%">&nbsp;</div>
                             </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
+                            <p class="rating-links"> {{-- <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> --}} </p>
                           </div>
                         </div>
                         <div class="item-price">
                           <div class="price-box">
                           
-                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{$item->price_1}} AED</span> </p>
+                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price">AED {{$item->price_1}}</span> </p>
                           </div>
                         </div>
                       </div>
